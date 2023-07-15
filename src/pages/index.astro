@@ -1,0 +1,12 @@
+---
+---
+
+<script is:inline>
+  if (/^de\b/.test(navigator.language)) {
+    window.location.pathname = `/de/home`;
+    //const lang = "de";
+  } else {
+    window.location.pathname = `/en/home`;
+    //const lang = "en";
+  }
+</script>

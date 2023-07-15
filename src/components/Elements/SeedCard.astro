@@ -1,0 +1,12 @@
+---
+import SeedPreview from "./SeedPreview.astro";
+import SeedPublished from "./SeedPublished.astro";
+
+export interface Props {
+  s: any;
+}
+
+const { s } = Astro.props;
+---
+
+{s.data.preview ? <SeedPreview s={s} /> : <SeedPublished s={s} />}
