@@ -14,6 +14,11 @@ lang == "de"
 interface Image {
   file: string;
   alt: string;
+  author: string;
+  authorurl: string;
+  lic: string;
+  licurl: string;
+  hint: string;
 }
 ---
 
@@ -39,6 +44,7 @@ interface Image {
             images={s.data.gallery}
             img={img}
             s={s}
+            t={t}
             index={index}
           />
         </li>

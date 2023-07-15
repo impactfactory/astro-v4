@@ -11,7 +11,19 @@ export const seedsSchema: any = z.object({
   desc_short: z.string().optional(),
   draft: z.boolean(),
   environments: z.array(z.string()).default([]),
-  gallery: z.array(z.object({ file: z.string(), alt: z.string() })).default([]),
+  gallery: z
+    .array(
+      z.object({
+        file: z.string().default(""),
+        alt: z.string().default(""),
+        author: z.string().default(""),
+        authorurl: z.string().default(""),
+        lic: z.string().default(""),
+        licurl: z.string().default(""),
+        hint: z.string().default(""),
+      })
+    )
+    .default([]),
   inspirational: z.string().optional(),
   keyvisual: z
     .object({

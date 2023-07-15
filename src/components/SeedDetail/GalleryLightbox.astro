@@ -1,7 +1,7 @@
 ---
 import { Picture } from "@astrojs/image/components";
 import { Icon } from "astro-icon";
-const { images, img, s, index } = Astro.props;
+const { images, img, s, t, index } = Astro.props;
 ---
 
 <div class="lb-overlay" id={"overlay-" + index}>
@@ -31,7 +31,15 @@ const { images, img, s, index } = Astro.props;
     widths={[1000, 2000]}
   />
 
-  <div class="info">{img.alt}</div>
+  <div class="info"> 
+    {img.alt} 
+
+    {img.author ? <span> / {t.picture}: <a href={img.authorurl} target="_blank" rel="noopener">{img.author}</a></span> : ""}
+   
+   {img.lic ? <span> / {t.license}:</span> <a href={img.licurl} target="_blank" rel="noopener">{img.lic}</a> : ""}
+
+    {" / " && img.hint}
+  </div>
 </div>
 
 <style>

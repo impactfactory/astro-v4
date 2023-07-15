@@ -13,6 +13,8 @@ export const components = {
     imprint: "Imprint",
   },
   gallery: {
+    license: "License",
+    picture: "Picture",
     title: "Impressions",
   },
   header: {},
