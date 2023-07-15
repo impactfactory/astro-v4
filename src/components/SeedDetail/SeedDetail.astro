@@ -5,10 +5,12 @@ import DetailVisual from "@components/Elements/DetailVisual.astro";
 import Gallery from "@components/SeedDetail/Gallery.astro";
 import HowTo from "@components/SeedDetail/HowTo.astro";
 import Inspirational from "@components/SeedDetail/Inspirational.astro";
+import KeyVisualLic from "./KeyVisualLic.astro";
 import Linklist from "@components/SeedDetail/Linklist.astro";
 import Seed from "@layouts/Seed.astro";
 import TagsList from "@components/SeedDetail/TagsList.astro";
-import KeyVisualLic from "./KeyVisualLic.astro";
+import Videos from "@components/SeedDetail/Videos.astro";
+
 
 const { s } = Astro.props;
 const lang = s.id.substr(0, 2);
@@ -38,6 +40,8 @@ const lang = s.id.substr(0, 2);
           <Inspirational inspirational={s.data.inspirational} />
         )
       }
+
+      <Videos s={s} />
 
       <TagsList s={s} />
 

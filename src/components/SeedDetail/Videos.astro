@@ -1,0 +1,28 @@
+---
+//import { YouTube } from 'astro-embed';
+
+const { s } = Astro.props;
+const lang = s.id.substr(0, 2);
+---
+
+<h3>Videos</h3>
+
+{
+  s.data.videos.map((v: string) => (
+    <iframe
+      width="560"
+      height="315"
+      src={"https://www.youtube-nocookie.com/embed/" + v + "?controls=0"}
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    />
+  ))
+}
+
+<style>
+  h3 {
+    padding-bottom: var(--padd-lg);
+  }
+</style>
