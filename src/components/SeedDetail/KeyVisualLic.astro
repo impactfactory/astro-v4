@@ -8,17 +8,14 @@ lang == "de"
   : (t = site.languages.en.components.keyvisual);
 ---
 
-<div class="keyvisual_lic">
-  {t.picture}:
-  <a href={s.data.keyvisual.author_url} target="_blank" rel="noopener"
-    >{s.data.keyvisual.author}</a
-  > / {t.license}: <a
-    href={s.data.keyvisual.lic_url}
-    target="_blank"
-    rel="noopener">{s.data.keyvisual.lic}</a
-  >
+<div class="keyvisual_lic"> 
+  {s.data.keyvisual.author ? <span>{t.picture}: <a href={s.data.keyvisual.author_url} target="_blank" rel="noopener">{s.data.keyvisual.author}</a></span> : ""}
+   
+  {s.data.keyvisual.lic ? <span> / {t.license}:</span> <a href={s.data.keyvisual.lic_url} target="_blank" rel="noopener">{s.data.keyvisual.lic}</a> : ""}
+
   {s.data.keyvisual.hint}
 </div>
+
 
 <style>
   .keyvisual_lic {

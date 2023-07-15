@@ -38,7 +38,7 @@ const { images, img, s, t, index } = Astro.props;
    
    {img.lic ? <span> / {t.license}:</span> <a href={img.licurl} target="_blank" rel="noopener">{img.lic}</a> : ""}
 
-    {" / " && img.hint}
+    {img.hint}
   </div>
 </div>
 
