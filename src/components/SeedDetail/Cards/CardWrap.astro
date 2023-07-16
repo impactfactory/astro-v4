@@ -1,0 +1,13 @@
+---
+import PreviewCard from "./PreviewCard.astro";
+import PublishedCard from "./PublishedCard.astro";
+
+export interface Props {
+  s: any;
+}
+
+const { s } = Astro.props;
+---
+
+{s.data.preview ? <PreviewCard s={s} /> : <PublishedCard s={s} />}
+

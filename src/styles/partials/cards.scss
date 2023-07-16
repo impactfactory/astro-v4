@@ -33,7 +33,7 @@
       text-shadow: 1px 1px 4px black;
     }
 
-    p {
+    .cardcontent {
       background-color: white;
       border-radius: 0 0 var(--rad-md) var(--rad-md);
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -41,12 +41,36 @@
       color: #444;
       margin-top: 0;
       margin-bottom: 0;
-      padding: var(--padd-sm);
+      padding: var(--padd-md) var(--padd-sm) var(--padd-sm) var(--padd-sm);
 
-      .synonyms {
-        display: block;
+      .tagslist {
+        letter-spacing: 0.01rem;
+        line-height: 1.3em;
+        margin: var(--padd-md) 0 0 0;
         font-size: var(--fs-sm);
-        padding: var(--padd-md) 0 0 0;
+
+        a {
+          color: hsl(var(--dark) / 1);
+          margin: 0 0.5em 0 0;
+          padding: 0;
+          text-decoration: none;
+          text-transform: uppercase;
+        }
+
+        a:hover {
+          background: hsl(var(--prim) / 1);
+          color: hsl(var(--white) / 1);
+        }
+
+        .animals {
+          background: hsl(var(--prim-lgt) / 1);
+        }
+        .environments {
+          background: hsl(var(--acc1-lgt) / 1);
+        }
+        .principles {
+          background: hsl(var(--tec-lgt) / 0.5);
+        }
       }
     }
   }
@@ -62,7 +86,7 @@
   .card-img {
     filter: sepia(0);
   }
-  .card-body p {
+  .card-body .cardcontent {
     background: hsl(var(--prim) / 0.5);
     color: hsl(var(--white) / 1);
   }
@@ -82,7 +106,7 @@
     z-index: 1000;
     transition: transform 5s ease-in-out;
   }
-  .card-body p {
+  .card-body .cardcontent {
     color: hsl(var(--black) / 0.4);
   }
 }

@@ -1,5 +1,6 @@
 ---
 import { Picture } from "@astrojs/image/components";
+import CardTagsList from "./CardTagsList.astro";
 
 export interface Props {
   s: any;
@@ -33,31 +34,12 @@ const { s } = Astro.props;
       <h3>
         {s.data.name}
       </h3>
-      <p>
-        {s.data.desc_short.substring(0, 160) + "..."}
-
-        <span class="synonyms">
-          {
-            s.data.synonyms.map((synonym) => (
-              <span>{synonym}&nbsp&nbsp&nbsp</span>
-            ))
-          }
-        </span>
-        <span class="environments">
-          {
-            s.data.environments.map((env) => (
-              <span>{env}&nbsp&nbsp&nbsp</span>
-            ))
-          }
-        </span>
-        <span class="animals">
-          {
-            s.data.animals.map((a) => (
-              <span>{a}&nbsp&nbsp&nbsp</span>
-            ))
-          }
-        </span>
-      </p>
     </a>
+    <div class="cardcontent">
+      <div class="shortdesc">
+        {s.data.desc_short.substring(0, 160) + "..."}
+      </div>
+      <CardTagsList s={s} />
+    </div>
   </div>
 </div>

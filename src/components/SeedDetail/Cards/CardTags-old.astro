@@ -1,0 +1,28 @@
+---
+export interface Props {
+  s: any;
+}
+
+const { s } = Astro.props;
+---
+<span class="synonyms">
+          {
+            s.synonyms.map((synonym) => (
+              <span>{synonym}&nbsp&nbsp&nbsp</span>
+            ))
+          }
+</span>
+<span class="environments">
+          {
+            s.environments.map((env) => (
+              <span>{env}&nbsp&nbsp&nbsp</span>
+            ))
+          }
+</span>
+<span class="animals">
+          {
+            s.animals.map((a) => (
+              <span>{a}&nbsp&nbsp&nbsp</span>
+            ))
+          }
+</span>

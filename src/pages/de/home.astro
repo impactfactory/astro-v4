@@ -1,6 +1,6 @@
 ---
 import Frontpage from "@layouts/Frontpage.astro";
-import Card from "@components/Elements/SeedCard.astro";
+import Card from "@components/SeedDetail/Cards/CardWrap.astro";
 import { getCollection } from "astro:content";
 
 const allSeeds = await getCollection("seeds", ({ id, data }) => {
